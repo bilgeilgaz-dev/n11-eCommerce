@@ -4,13 +4,14 @@
       <ProductImages :productToBuy="productToBuy"/>
     </div>
     <div class="product-details">
-      <ProductHeader :product="productDetails"/>
+      <ProductHeader v-if="productDetails" :product="productDetails"/>
       <ProductOptions 
         :productVariants="productVariants"
         :selectableAttributes="selectableAttributes"
         @selectAttribute="selectAttribute"
       />
       <ProductQuantity 
+        v-if="productPrices"
         :productPrices="productPrices"
         @updateProductQuantity="updateProductQuantity"
       />
@@ -52,15 +53,15 @@ export default {
     },
     
     selectableAttributes() {
-      return this.productDetails.selectableAttributes;
+      return this.productDetails && this.productDetails.selectableAttributes;
     },
 
     productVariants() {
-      return this.productDetails.productVariants;
+      return this.productDetails && this.productDetails.productVariants;
     },
 
     productPrices() {
-      return this.productDetails.baremList;
+      return this.productDetails && this.productDetails.baremList;
     }
   },
 
@@ -78,17 +79,14 @@ export default {
     },
 
     updateProductQuantity(quantity) {
-      console.log('updateProductQuantity')
       this.productQuantityToBuy = parseInt(quantity, 10);
       this.calculateTotalPrice();
     },
 
     calculateTotalPrice() {
-      console.log('calculateTotalPrice')
       this.productDetails.baremList.forEach(barem => {
         if(barem.minimumQuantity <= this.productQuantityToBuy && barem.maximumQuantity >= this.productQuantityToBuy){
           this.totalPriceToPay = barem.price * this.productQuantityToBuy;
-          console.log('this.totalPriceToPay', this.totalPriceToPay);
         }
       });
     }

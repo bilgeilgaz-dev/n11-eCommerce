@@ -66,8 +66,6 @@ export default {
     },
 
     checkProductAvailability(att, value) {
-      console.log('att', att);
-      console.log('this.enabledOptions', this.enabledOptions);
       return this.enabledOptions.length > 0 && this.enabledOptions[0].name === att.name && !this.enabledOptions.some(option => option.value === value);
     }
 

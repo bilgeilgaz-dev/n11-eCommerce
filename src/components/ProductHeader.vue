@@ -9,6 +9,7 @@
 export default {
   props: {
     product: {
+      required: true,
       type: Object,
       default: () => {}
     }
