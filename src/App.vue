@@ -1,15 +1,15 @@
 <template>
   <div id="container">
-    <ProductImages/>
+    <Product/>
   </div>
 </template>
 
 <script>
-import ProductImages from "./components/ProductImages";
+import Product from "./components/Product";
 
 export default {
   components: {
-    ProductImages,
+    Product,
   },
 };
 </script>
