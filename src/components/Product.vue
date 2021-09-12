@@ -4,7 +4,10 @@
       <ProductImages :productToBuy="productToBuy"/>
     </div>
     <div class="product-details">
-      <ProductHeader v-if="productDetails" :product="productDetails"/>
+      <ProductHeader 
+        v-if="productDetails" 
+        :product="productDetails"
+      />
       <ProductOptions 
         :productVariants="productVariants"
         :selectableAttributes="selectableAttributes"
@@ -107,6 +110,17 @@ export default {
     display: flex;
     padding-left: 20px;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 580px) {
+  #product-container {
+    flex-direction: column;
+  }
+
+  .product-details {
+    width: 100% !important;
+    padding-left: 0 !important;
   }
 }
 </style>

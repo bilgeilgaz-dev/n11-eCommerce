@@ -1,7 +1,12 @@
 <template>
   <div id="product-options-container">
-    <div v-for="(att, index) in selectableAttributes" :key="index" class="att-container">
+    <div 
+      v-for="(att, index) in selectableAttributes" 
+      :key="index" 
+      class="att-container"
+    >
       <span class="att-name">{{ att.name }}</span>
+      <span class="dots">{{ $t(':') }}</span>
       <div 
         v-for="(value,index) in att.values" 
         :key="index" 
@@ -82,7 +87,11 @@ export default {
     margin-bottom: 15px;
 
     .att-name {
-      width: 100px;
+      width: 90px;
+    }
+
+    .dots {
+      width: 10px;
     }
 
     .disabled-att-value {
@@ -108,6 +117,17 @@ export default {
     .selected-att {
       border: 2px solid grey;
     }
+  }
+}
+</style>
+<style lang="scss">
+@media (max-width: 580px) {
+  #product-options-container{
+    padding-left: 0 !important;
+  }
+
+  .att-button {
+    width: auto !important;
   }
 }
 </style>

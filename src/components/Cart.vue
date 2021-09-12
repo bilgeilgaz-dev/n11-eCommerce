@@ -1,19 +1,25 @@
 <template>
   <div class="cart-container">
     <div class="total-price-container">
-      <span class="total-price-header">Toplam</span>
-      <span class="total-price">{{ totalPrice }} TL</span>
+      <span class="total-price-header">
+        {{ $t('cart.toplam') }} 
+        <span class="dots">{{ $t(':') }}</span>
+      </span>
+      <span class="total-price">{{ totalPrice }} {{ $t('tl') }}</span>
     </div>
-    <div class="cargo">Kargo ucreti:<a href="#" class="cargo-option">Alici oder</a></div>
+    <div class="cargo">
+      {{ $t('cart.kargoUcreti') }}
+      <a href="#" class="cargo-option">{{ $t('cart.aliciOder') }}</a>
+    </div>
     <div class="button-container">
       <button 
         class="add-button" 
         @click="addToCart()"
         :disabled="isAddButtonDisabled"
       >
-        SEPETE EKLE
+        {{ $t('cart.sepeteEkle') }}
       </button>
-      <a href="#" class="pay-info">Odeme secenekleri</a>
+      <a href="#" class="pay-info">{{ $t('cart.odemeSecenekleri') }}</a>
     </div>
   </div>
 </template>
@@ -63,6 +69,11 @@ export default {
 
     .total-price-header {
       width: 100px;
+      display: flex;
+
+      .dots {
+        margin-left: 30px;
+      }
     }
 
     .total-price {

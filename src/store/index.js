@@ -1,6 +1,5 @@
 import Vue from "vue";
 import Vuex from "vuex";
-//import productData from '../../public/product-data.json';
 
 Vue.use(Vuex);
 

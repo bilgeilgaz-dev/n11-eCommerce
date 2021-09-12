@@ -1,3 +1,19 @@
 {
-  
+  "tl": " TL",
+  ":": ":",
+  "cart": {
+    "toplam": "Toplam",
+    "kargoUcreti": "Kargo ucreti:",
+    "aliciOder": "Alici oder",
+    "odemeSecenekleri": "Odeme secenekleri",
+    "sepeteEkle": "SEPETE EKLE"
+  },
+  "header": {
+    "adet": " / Adet",
+    "minSiparis": "Adet(Minimum Siparis Adedi)"
+  },
+  "quantity": {
+    "toptanFiyat": "Toptan Fiyat",
+    "adet": "Adet"
+  }
 }

@@ -2,20 +2,26 @@
   <div id="product-quantity-container">
     <div class="quantity-container">
       <div class="quantity-header">
-        <span>Toptan Fiyat</span>
-        <span>(Adet)</span>
+        <span>{{ $t('quantity.toptanFiyat') }}</span>
+        <span>{{ `(${$t('quantity.adet')})` }}</span>
       </div>
+      <span class="dots">{{ $t(':') }}</span>
       <div class="product-price-container">
-        <span v-for="(productPrice,index) in productPrices" :key="index" :class="{'product-price': true, 'selected-amount': checkAmount(productPrice)}">
+        <span 
+          v-for="(productPrice,index) in productPrices" 
+          :key="index" 
+          :class="{'product-price': true, 'selected-amount': checkAmount(productPrice)}"
+        >
           <span>{{ `${productPrice.minimumQuantity} - ${productPrice.maximumQuantity}`}}</span>
           <span>{{ productPrice.price }} TL</span>
         </span>
       </div>
     </div>
     <div class="quantity-input-container">
-      <span class="quantity-input-header">Adet</span>
+      <span class="quantity-input-header">{{ $t('quantity.adet') }}</span>
+      <span class="dots">{{ $t(':') }}</span>
       <input type="number" v-model="numberOfProduct" class="quantity-input">
-      <span class="quantity">Adet</span>
+      <span class="quantity">{{ $t('quantity.adet') }}</span>
     </div>
   </div>
 </template>
@@ -60,7 +66,11 @@ export default {
     .quantity-header {
       display: flex;
       flex-direction: column;
-      width: 100px;
+      width: 90px;
+    }
+
+    .dots {
+      width: 10px;
     }
   }
 
@@ -86,7 +96,11 @@ export default {
     margin-top: 20px;
 
     .quantity-input-header {
-      width: 100px;
+      width: 90px;
+    }
+
+    .dots {
+      width: 10px;
     }
 
     .quantity-input {

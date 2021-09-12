@@ -1,8 +1,8 @@
 <template>
   <div v-if="product && product.productTitle" class="product-header-container">
     <p class="product-title">{{ product.productTitle }}</p>
-    <h5 class="product-prices">{{ `${minPrice} TL - ${maxPrice} TL` }}<span class="adet"> / Adet</span></h5>
-    <span class="min-quantity">{{`${minQuantity} Adet(Minimum Siparis Adedi)`}}</span>
+    <h5 class="product-prices">{{ `${minPrice} ${$t('tl')} - ${maxPrice} ${$t('tl')}` }}<span class="adet">{{ $t('header.adet') }}</span></h5>
+    <span class="min-quantity">{{`${minQuantity} ${$t('header.minSiparis')}`}}</span>
   </div>
 </template>
 <script>
@@ -63,5 +63,12 @@ export default {
   font-size: 14px;
   color: gray;
   font-weight: 400;
+}
+</style>
+<style lang="scss">
+@media (max-width: 580px) {
+  .product-header-container{
+    padding-left: 0 !important;
+  }
 }
 </style>

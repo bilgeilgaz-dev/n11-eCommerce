@@ -1,11 +1,11 @@
 <template>
   <div v-if="productImages">
     <div class="selected-image-container">
-      <img :src="selectedImage" class="selected-image"/>
+      <img :src="selectedImage" class="selected-image" alt="selected-img"/>
     </div>
     <div class="row thumbnail-row">
       <div v-for="(src,index) in productImages" :key="index">
-        <img :src="src" class="thumbnail-img" @click="selectImage(src)"/>
+        <img :src="src" class="thumbnail-img" @click="selectImage(src)" alt="thumbnail-img"/>
       </div>
     </div>
   </div>
@@ -58,15 +58,23 @@ export default {
 <style lang="scss" scoped>
 .selected-image {
   width: 100%;
-}
-
-.thumbnail-row {
-  
+  max-width: 450px;
 }
 
 .thumbnail-img {
   width: 70px;
   border: 1px solid lightgray;
   margin: 2px;
+}
+</style>
+<style lang="scss">
+@media (max-width: 580px) { 
+  .product-images-container {
+    width: 100% !important;
+  }
+
+  .thumbnail-row {
+    justify-content: center;
+  }
 }
 </style>
