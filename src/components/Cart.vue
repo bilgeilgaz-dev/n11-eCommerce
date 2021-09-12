@@ -53,7 +53,7 @@ export default {
 
   methods: {
     addToCart() {
-      console.log(`the following item is added: ${this.productToBuy.id}` , `amount: ${this.productQuantityToBuy}`)
+      console.log(`the following item is added: ${this.productToBuy.id}` , `the amount of items: ${this.productQuantityToBuy}`)
     }
   }
 }
@@ -114,5 +114,4 @@ export default {
     }
   }
 }
-
 </style>

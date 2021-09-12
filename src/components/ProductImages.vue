@@ -1,11 +1,23 @@
 <template>
   <div v-if="productImages">
     <div class="selected-image-container">
-      <img :src="selectedImage" class="selected-image" alt="selected-img"/>
+      <img 
+        :src="selectedImage" 
+        class="selected-image" 
+        alt="selected-img"
+      />
     </div>
     <div class="row thumbnail-row">
-      <div v-for="(src,index) in productImages" :key="index">
-        <img :src="src" class="thumbnail-img" @click="selectImage(src)" alt="thumbnail-img"/>
+      <div 
+        v-for="(src,index) in productImages" 
+        :key="index"
+      >
+        <img 
+          :src="src" 
+          class="thumbnail-img" 
+          @click="selectImage(src)" 
+          alt="thumbnail-img"
+        />
       </div>
     </div>
   </div>

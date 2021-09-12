@@ -44,7 +44,7 @@ export default new Vuex.Store({
             commit("setAllProductImages", clonedData);
           });
       } catch (error) {
-        console.log('error', error);
+        console.error('error', error);
       }
     }
   }

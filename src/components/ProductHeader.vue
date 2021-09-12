@@ -1,7 +1,13 @@
 <template>
-  <div v-if="product && product.productTitle" class="product-header-container">
+  <div 
+    v-if="product && product.productTitle" 
+    class="product-header-container"
+  >
     <p class="product-title">{{ product.productTitle }}</p>
-    <h5 class="product-prices">{{ `${minPrice} ${$t('tl')} - ${maxPrice} ${$t('tl')}` }}<span class="adet">{{ $t('header.adet') }}</span></h5>
+    <h5 class="product-prices">
+      {{ `${minPrice} ${$t('tl')} - ${maxPrice} ${$t('tl')}` }}
+      <span class="adet">{{ $t('header.adet') }}</span>
+    </h5>
     <span class="min-quantity">{{`${minQuantity} ${$t('header.minSiparis')}`}}</span>
   </div>
 </template>
